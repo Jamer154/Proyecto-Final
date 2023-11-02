@@ -1,0 +1,618 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Cormorant+Upright&family=Crimson+Text:ital@1&family=EB+Garamond:wght@500&family=Fasthand&family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,500;1,8..144,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Cormorant Upright', serif;
+}
+
+/* INDEX */
+
+.header {
+    width: 100%;
+    height: 100px;
+    padding: 0 3%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 25;
+}
+
+.header img {
+    width: 150px;
+    height: 70px;
+}
+
+.header h3 {
+    color: white;
+    font-size: 21px;
+}
+
+.container-uno {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.redes img {
+    width: 60px;
+    height: 60px;
+}
+
+.nav a:hover{
+    color: red;
+}
+
+.titulo {
+    margin-top: 120px;
+}
+
+.titulo h1 {
+    font-size: 45px;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+}
+
+.titulo p {
+    font-size: 29px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    width: 95%;
+    margin: auto;
+    grid-gap: 10px;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.galeria > a{
+    display: block;
+    position: relative;    
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.galeria img {
+    width: 100%;
+    vertical-align: top;
+    height: 300px;
+    object-fit: cover;    
+    transition: transform 0.5s;
+}
+
+.galeria a:hover img{
+    filter: blur(2px);
+    transform: rotate(10deg) scale(1.3);
+}
+
+.light-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    transition: transform .3s ease-in-out;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    transform: scale(0); 
+}
+
+.light-box img{
+    width: 75vw;
+    max-height: 70vh;
+}
+
+.light-box:target{
+    transform: scale(1)
+}
+
+.close {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50px;
+}
+
+.next {
+    display: block;
+    background: red;
+    color: white;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(58, 58, 58);
+    width: 100%;
+    height: 260px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-around;
+       
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section-title{
+    color: rgb(210, 200, 200);
+    font-size: 40px;
+    margin-bottom: 12px;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+}
+
+.footer-section ul li {
+    color: white;
+    font-size: 27px;
+    list-style: none;
+    text-align: center;
+}
+
+/* PROYECTOS */
+
+/* COCINAS */
+
+.titulo-proyecto {
+    margin-top: 130px;
+}
+
+.titulo-proyecto-uno {
+    margin-top: 50px;
+}
+
+.titulo-proyecto-uno h3 {
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+}
+
+.titulo-proyecto h1 {
+    font-size: 45px;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+}
+
+.titulo-proyecto p {
+    font-size: 29px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.galeria-cocina{
+    width: 90%;
+    margin: auto;
+    list-style: none;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.galeria-cocina li {
+    margin: 10px;
+}
+
+.galeria-cocina img {
+    width: 250px;
+    height: 200px;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+}
+
+.modal:target {
+    display: block;
+    position: fixed;
+    background: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+}
+
+.modal h3 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.imagen {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen a {
+    color: white;
+    font-size: 50px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.imagen a:nth-child(2) {
+    margin: 0;
+    height: 100%;
+    flex-shrink: 2;
+}
+
+.imagen img {
+    width: 850px;
+    height: 470px;
+    max-width: 100%;
+    border: 7px solid #fff;
+    box-sizing: border-box;
+}
+
+.cierre {
+    display: block;
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    margin: 60px auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    color: #080707;
+    padding: 2px;
+    border-radius: 50%;
+    line-height: 25px;
+}
+
+/* BAÑOS */
+
+.titulo-bano {
+    margin-top: 50px;
+}
+
+.titulo-bano h3 {
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+}
+
+.galeria-bano{
+    width: 90%;
+    margin: auto;
+    list-style: none;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.galeria-bano li {
+    margin: 10px;
+}
+
+.galeria-bano img {
+    width: 250px;
+    height: 200px;
+}
+
+/* MODAL */
+
+.modal-bano {
+    display: none;
+}
+
+.modal-bano:target {
+    display: block;
+    position: fixed;
+    background: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+}
+
+.modal-bano h3 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.imagen-bano {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-bano a {
+    color: white;
+    font-size: 50px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.imagen-bano a:nth-child(2) {
+    margin: 0;
+    height: 100%;
+    flex-shrink: 2;
+}
+
+.imagen-bano img {
+    width: 850px;
+    height: 470px;
+    max-width: 100%;
+    border: 7px solid #fff;
+    box-sizing: border-box;
+}
+
+.cierre-bano {
+    display: block;
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    margin: 60px auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    color: #080707;
+    padding: 2px;
+    border-radius: 50%;
+    line-height: 25px;
+}
+
+/* MATERIALES*/
+
+.titulo-material {
+    margin-top: 130px;
+}
+
+.titulo-material h1 {
+    font-size: 45px;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+}
+
+.titulo-material p {
+    font-size: 29px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.contenedor-materiales {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.marmol {
+    width: 90%;
+    height: 700px;
+    margin-top: 40px;
+    text-align: center;
+
+}
+
+.marmol img {
+    width: 800px;
+    height: 500px;
+    margin: 30px;
+}
+
+.marmol h3 {
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 2px 2px 4px; 
+    margin: 30px; 
+    
+}
+
+.marmol p {
+    font-size: 25px;
+    text-align: center; 
+    font-weight: 700;  
+}
+
+.quarztone {
+    width: 90%;
+    height: 700px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.quarztone img {
+    width: 800px;
+    height: 500px;
+    margin: 30px; 
+}
+
+.quarztone h3 {
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 2px 2px 4px; 
+    margin: 30px;    
+}
+
+.quarztone p {
+    font-size: 25px;
+    text-align: center;    
+    font-weight: 700; 
+}
+
+.granito {
+    width: 90%;
+    height: 600px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.granito img {
+    width: 700px;
+    height: 400px;
+    margin: 30px; 
+}
+
+.granito h3 {
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+    margin: 30px;     
+}
+
+.granito p {
+    font-size: 25px;
+    text-align: center;    
+    font-weight: 700;
+}
+
+.sinterizado {
+    width: 90%;
+    height: 700px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.sinterizado img {
+    width: 650px;
+    height: 500px;
+    margin: 30px; 
+}
+
+.sinterizado h3 {
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 2px 2px 4px; 
+    margin: 30px;    
+}
+
+.sinterizado p {
+    font-size: 25px;
+    text-align: center;  
+    font-weight: 700;   
+}
+
+/* NOSOTROS */
+
+.titulo-nosotros {
+    margin-top: 137px;
+}
+
+.titulo-nosotros h1 {
+    font-size: 45px;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+}
+
+.seccion-uno{
+    width: 100%;
+    height: 630px;
+    display: flex;
+    padding: 5%;
+    gap: 100px;
+}
+
+.img-nosotros img{
+    width: 530px;
+    height: 400px;
+}
+
+.contenedor-uno p {
+    text-align: center;
+    font-size: 35px;
+    text-shadow: 2px 2px 2px;
+    margin: 8px;
+}
+
+/* SECCION DOS */
+
+.titulo-servicios {
+    margin-top: -90px;
+}
+
+.titulo-servicios h1 {
+    font-size: 45px;
+    text-align: center;
+    text-shadow: 2px 2px 4px;
+}
+
+.container-card {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    margin-top: 50px;
+}
+
+.card {
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #847f7f;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translate(-3%);
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+}
+
+.card .contenido h3 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-align: center;
+}
